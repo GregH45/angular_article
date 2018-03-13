@@ -33,5 +33,4 @@ export class ArticleComponent implements OnInit {
   delete(){
     this.deletedArticle.emit(this.article);
   }
-
 }

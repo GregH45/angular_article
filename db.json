@@ -3,8 +3,8 @@
     {
       "id": 0,
       "title": "My First Article",
-      "content": "Hello World",
-      "authors": "Orangefire"
+      "content": "Hello Worldq",
+      "authors": "Grégoire HARBA"
     },
     {
       "id": 1,
@@ -19,22 +19,10 @@
       "authors": "Orangefire"
     },
     {
+      "id": 3,
       "title": "Fake Title",
-      "content": "sq",
-      "authors": "qs",
-      "id": 3
-    },
-    {
-      "title": "Fake Title",
-      "content": "sqdqddd",
-      "authors": "cccc",
-      "id": 4
-    },
-    {
-      "title": "Fake Title",
-      "content": "test",
-      "authors": "test",
-      "id": 5
+      "content": "qdfg",
+      "authors": "qdfg"
     }
   ]
 }

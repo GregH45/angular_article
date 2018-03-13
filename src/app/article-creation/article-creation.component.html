@@ -1,5 +1,26 @@
-<h3><i>Create your article</i></h3>
-<form [formGroup]="articleForm" (ngSubmit)="createArticle()">
+
+<form *ngIf="edit" [formGroup]="articleForm" (ngSubmit)="updateArticle()">
+  <h3><i>Edit your article</i></h3>
+  <div class="form-group">
+    <label class="center-block">title:
+      <input class="form-control" formControlName="title">
+    </label>
+    <br />
+    <label class="center-block">content:
+      <textarea class="form-control" formControlName="content"></textarea>
+    </label>
+    <br />
+    <label class="center-block">authors:
+      <input class="form-control" formControlName="authors">
+    </label>
+    <br />
+    <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Save</button>
+  </div>
+</form>
+
+
+<form *ngIf="!edit" [formGroup]="articleForm" (ngSubmit)="createArticle()">
+  <h3><i>Create your article</i></h3>
   <div class="form-group">
     <label class="center-block">title:
       <input class="form-control" formControlName="title">

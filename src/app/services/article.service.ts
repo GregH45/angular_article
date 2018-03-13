@@ -27,4 +27,8 @@ export class ArticleService {
   public add(newArticle : RawArticle): Observable<Article> {
     return this.http.post<Article>("http://localhost:3000/articles/", newArticle);
   }
+
+  public update(newArticle : Article): Observable<Article> {
+    return this.http.put<Article>(`http://localhost:3000/articles/${newArticle.id}`, newArticle);
+  }
 }
