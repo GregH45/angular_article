@@ -17,3 +17,28 @@
   font-family: 'Open Sans', sans-serif;
   padding: 5px 10px;
 }
+
+.searchForm > .form > ul {
+  display: none;
+  background: white;
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  right: 0;
+  width: 300px;
+}
+
+.searchForm > .form > ul.active {
+  display: block;
+}
+
+.searchForm > .form > ul > li {
+  display: block;
+}
+
+.searchForm > .form > ul > li > a {
+  display: inline-block;
+  padding: 5px 10px;
+}

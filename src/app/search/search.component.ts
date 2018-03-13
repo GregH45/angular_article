@@ -28,25 +28,58 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
-    const search = this.searchForm.value.search.toLowerCase();
-    let results = [];
+    const list = document.getElementById('listArticles'),
+          search = this.searchForm.value.search.toLowerCase();
 
-    this._articles.forEach((article) => {
-      const exist = JSON.stringify(article).toLowerCase().includes(search);
-      if (exist) {
-        results.push(article);
+    function resetList() {
+      list.classList.remove('active');
+      
+      while (list.children.length > 0) {
+        list.children[0].remove();
       }
-    });
+    }
 
-    switch (results.length) {
-      case 0:
-        alert('Aucun result');
-        break;
-      case 1:
-        window.location.href = '/articles/' + results[0].id;
-        break;
-      default:
-        console.log(results);
+    function addArticle(article) {
+      let li = document.createElement('li'),
+          a = document.createElement('a');
+
+      a.innerText = article.title;
+      a.href = '/articles/' + article.id;
+
+      li.appendChild(a);
+      list.appendChild(li);
+    }
+
+
+    resetList();
+
+    if (search.length > 0) {
+      let results = [];
+      this._articles.forEach((article) => {
+        if (JSON.stringify(article).toLowerCase().includes(search)) {
+          results.push(article);
+        }
+      });
+
+      switch (results.length) {
+        // No Result
+        case 0:
+          alert('Aucun result');
+          break;
+
+        // Unique Result
+        case 1:
+          window.location.href = '/articles/' + results[0].id;
+          break;
+
+        // Multiple Results
+        default:
+          resetList();
+          results.forEach((article) => {
+            addArticle(article);
+          });
+          list.classList.add('active');
+      }
     }
   }
 

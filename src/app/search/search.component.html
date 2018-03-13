@@ -1,5 +1,10 @@
 <form class="searchForm" [formGroup]="searchForm" (ngSubmit)="search()">
   <div class="form">
     <input type="text" formControlName="search" placeholder="Search" autofocus>
+    <ul id="listArticles">
+      <li>
+        <a href="#">Mon Titre</a>
+      </li>
+    </ul>
   </div>
 </form>

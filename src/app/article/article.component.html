@@ -5,6 +5,6 @@
 
   <div *ngIf="!hiddenBtn">
     <button (click)="delete()">Remove</button>
-    <a [routerLink]="['/edit',this.article.id]"><button >Edit</button></a>
+    <button (click)="edit()">Edit</button>
   </div>
 </div>

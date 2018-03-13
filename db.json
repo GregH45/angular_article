@@ -21,8 +21,20 @@
     {
       "id": 3,
       "title": "Fake Title",
-      "content": "qdfg",
+      "content": "qdfg2",
       "authors": "qdfg"
+    },
+    {
+      "id": 4,
+      "title": "Fake Title 2 - edited",
+      "content": "Prout",
+      "authors": "Thomas Le Sciellour"
+    },
+    {
+      "title": "Fake Title 3 - to delete",
+      "content": "Not important",
+      "authors": "me",
+      "id": 5
     }
   ]
 }

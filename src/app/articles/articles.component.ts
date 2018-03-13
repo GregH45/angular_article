@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs/Observable";
+
 import { Article } from "../models/article";
 import { ArticleService } from "../services/article.service";
-import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-articles',
@@ -12,8 +13,7 @@ export class ArticlesComponent implements OnInit {
 
   private _articles : Observable<Article[]>;
 
-  constructor(private articleService: ArticleService) {
-  }
+  constructor(private articleService: ArticleService) {}
 
   articles(): Observable<Article[]> {
     return this._articles;
@@ -23,14 +23,10 @@ export class ArticlesComponent implements OnInit {
     this._articles = this.articleService.getAll();
   }
 
-  delete(article: Article){
+  remove(article: Article) {
     this.articleService.delete(article.id).subscribe(()=>{
       this._articles = this.articleService.getAll();
     });
-  }
-
-  newArticle(article: Article){
-    this._articles = this.articleService.getAll();
   }
 
 }

@@ -49,19 +49,24 @@ export class ArticleCreationComponent implements OnInit {
       title : formModel.title,
       content : formModel.content,
       authors : formModel.authors
-    }
-    this.articleService.add(rawArticle).subscribe();
+    };
+
+    this.articleService.add(rawArticle).subscribe(article => {
+      window.location.href = '/articles/' + article.id;
+    });
   }
 
   updateArticle() {
-    console.log(this.article.id);
     const formModel = this.articleForm.value;
     const rawArticle : Article = {
       id      : this.article.id,    
       title   : formModel.title,
       content : formModel.content,
       authors : formModel.authors
-    }
-    this.articleService.update(rawArticle).subscribe();
+    };
+
+    this.articleService.update(rawArticle).subscribe(() => {
+      window.location.href = '/articles/' + this.article.id;
+    });
   }
 }

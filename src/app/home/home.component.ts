@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.articleService.getAll().forEach((articles) => {
-      this.article = articles[0];
+      this.article = articles[articles.length-1];
     });
   }
 

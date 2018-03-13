@@ -1,9 +1,8 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
-import { Article } from '../models/article';
-import { EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
+
+import { Article } from '../models/article';
 import { ArticleService } from "../services/article.service";
-import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-article',
@@ -14,15 +13,14 @@ export class ArticleComponent implements OnInit {
 
   @Input()
   article: Article;
+  
   @Input()
   hiddenBtn: Boolean;
-
+  
   @Output()
-  deletedArticle : EventEmitter<Article> = new EventEmitter();
+  removeArticle: EventEmitter<Article> = new EventEmitter();
 
-  constructor(private route: ActivatedRoute, private articleService : ArticleService) {
-
-  }
+  constructor(private route: ActivatedRoute, private articleService: ArticleService) {}
 
   ngOnInit() {
     this.route.params.subscribe( params => {
@@ -32,7 +30,17 @@ export class ArticleComponent implements OnInit {
     });
   }
 
-  delete(){
-    this.deletedArticle.emit(this.article);
+  delete() {
+    /**/ // Remove the last slash to switch between instructions
+    this.articleService.delete(this.article.id).subscribe(()=>{
+      window.location.href = '/articles';
+    });
+    /*/
+    this.removeArticle.emit(this.article);
+    //*/
+  }
+
+  edit() {
+    window.location.href = '/edit/' + this.article.id;
   }
 }
