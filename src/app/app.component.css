@@ -1,0 +1,35 @@
+.nav {
+  position: fixed;
+  display: block;
+  top: 0; left: 0; right: 0;
+  padding: 10px;
+  background: white;
+}
+
+.nav > ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nav > ul > li {
+  float: left;
+}
+
+.nav > ul > li > a {
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.nav > .searchBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.page {
+  margin-top: 60px;
+}

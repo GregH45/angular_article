@@ -1,0 +1,19 @@
+.searchForm {
+  position: relative;
+  display: table;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.searchForm > .form {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.searchForm > .form > input[type=text] {
+  border: 1px solid #E0E0E0;
+  background: white;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 5px 10px;
+}

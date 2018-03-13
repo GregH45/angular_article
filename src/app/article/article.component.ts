@@ -14,6 +14,8 @@ export class ArticleComponent implements OnInit {
 
   @Input()
   article: Article;
+  @Input()
+  hiddenBtn: Boolean;
 
   @Output()
   deletedArticle : EventEmitter<Article> = new EventEmitter();
