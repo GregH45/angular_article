@@ -40,3 +40,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  '''
  json-server --watch db.json 
  '''
+
+
+ ## TODO
+ Add 3 modules :
+ 	1. Page D'acceuil
+	2. Bare de Recherche
+	3. Edition d'Article
