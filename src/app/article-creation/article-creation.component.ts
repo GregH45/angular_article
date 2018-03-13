@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ArticleServic } from "../services/article.service";
+import { ArticleService } from "../services/article.service";
 import { RawArticle } from "../models/raw-article";
 import { EventEmitter } from '@angular/core';
 
