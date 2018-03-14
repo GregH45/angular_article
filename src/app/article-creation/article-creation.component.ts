@@ -21,7 +21,7 @@ export class ArticleCreationComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private articleService : ArticleService, private route: ActivatedRoute) {
     this.articleForm = this.fb.group({
-      title: ['Fake Title', Validators.required ],
+      title: ['', Validators.required ],
       content : ['', Validators.required ],
       authors : ['', Validators.required ],
     });
@@ -43,7 +43,15 @@ export class ArticleCreationComponent implements OnInit {
     });
   }
 
-  createArticle(){
+  submit() {
+    if (this.edit) {
+      this.updateArticle();
+    } else {
+      this.createArticle();
+    }
+  }
+
+  private createArticle(){
     const formModel = this.articleForm.value;
     const rawArticle : RawArticle = {
       title : formModel.title,
@@ -56,7 +64,7 @@ export class ArticleCreationComponent implements OnInit {
     });
   }
 
-  updateArticle() {
+  private updateArticle() {
     const formModel = this.articleForm.value;
     const rawArticle : Article = {
       id      : this.article.id,    

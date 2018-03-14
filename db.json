@@ -31,10 +31,10 @@
       "authors": "Thomas Le Sciellour"
     },
     {
-      "title": "Fake Title 3 - to delete",
-      "content": "Not important",
-      "authors": "me",
-      "id": 5
+      "id": 6,
+      "title": "What Web Can Do Today",
+      "content": "You like the new rules of HTML5 technologies and you want to discover all the API ? So this next site is for you.\n\nI would like to present What Web Can Do Today a usefull website who organizes all references features of HTML5 API.\n\nYou will find the common features as audio and video, webRTC for real-time communication, offline mode with the ServiceWorker, geolocation and many others. And more special features as sensors (ambient light, nfc…), speech recognition, notification system…\n\nMore than this listing of all features, on each you can click and see a description of the API and a statistic of which browser support it.\n\nTo conclude is a really good website to web integration. To use without moderation with the other website call Can I Use who lists all HTML5 features supported by each browser.\n",
+      "authors": "Thomas Le Sciellour"
     }
   ]
 }

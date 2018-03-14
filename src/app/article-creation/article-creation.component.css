@@ -1,3 +1,41 @@
 form {
   padding: 10px;
 }
+
+form > h1 {
+  margin: 40px 0;
+}
+
+form > table {
+  width: 100%;
+}
+
+form > table tr > td {
+  padding: 5px;
+}
+
+form > table tr > td:first-child {
+  width: 35%;
+  text-align: right;
+  vertical-align: top;
+}
+
+form > table tr > td:nth-child(2) {
+  text-align: left;
+}
+
+form > table tr > td:last-child {
+  text-align: center;
+}
+
+input, textarea {
+  width: 100%;
+}
+
+textarea {
+  height: 400px;
+}
+
+button {
+
+}

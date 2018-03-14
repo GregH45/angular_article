@@ -1,39 +1,25 @@
 
-<form *ngIf="edit" [formGroup]="articleForm" (ngSubmit)="updateArticle()">
-  <h3><i>Edit your article</i></h3>
-  <div class="form-group">
-    <label class="center-block">title:
-      <input class="form-control" formControlName="title">
-    </label>
-    <br />
-    <label class="center-block">content:
-      <textarea class="form-control" formControlName="content"></textarea>
-    </label>
-    <br />
-    <label class="center-block">authors:
-      <input class="form-control" formControlName="authors">
-    </label>
-    <br />
-    <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Save</button>
-  </div>
-</form>
-
-
-<form *ngIf="!edit" [formGroup]="articleForm" (ngSubmit)="createArticle()">
-  <h3><i>Create your article</i></h3>
-  <div class="form-group">
-    <label class="center-block">title:
-      <input class="form-control" formControlName="title">
-    </label>
-    <br />
-    <label class="center-block">content:
-      <textarea class="form-control" formControlName="content"></textarea>
-    </label>
-    <br />
-    <label class="center-block">authors:
-      <input class="form-control" formControlName="authors">
-    </label>
-    <br />
-    <button class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Save</button>
-  </div>
+<form [formGroup]="articleForm" (ngSubmit)="submit()">
+  <h1 *ngIf="edit">Modifier el Articulo</h1>
+  <h1 *ngIf="!edit">Créer el Articulo</h1>
+  <table>
+    <tr>
+      <td>Titre</td>
+      <td><input formControlName="title"></td>
+    </tr>
+    <tr>
+      <td>Contenu</td>
+      <td><textarea formControlName="content"></textarea></td>
+    </tr>
+    <tr>
+      <td>Auteurs</td>
+      <td><input formControlName="authors"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button *ngIf="edit" class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Updation</button>
+        <button *ngIf="!edit" class="btn btn-success" [disabled]="articleForm.invalid" type="submit">Enregistrado</button>
+      </td>
+    </tr>
+  </table>
 </form>
